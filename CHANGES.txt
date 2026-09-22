@@ -1,0 +1,118 @@
+WOKA — FRONT-END COURSEWORK CHANGE RECORD
+Date: 15 September 2026
+Starting point: Dimension by HTML5 UP, supplied through Cloud Academy.
+
+1. WHAT THIS PAGE IS
+
+A public project page with a spacious, centred homepage introducing Omari's Woka trading-bot idea. It explains
+halal screening, fresh news, relative trading volume, recurring price patterns,
+the proposed Trading 212 workflow and current development progress.
+
+The page describes a project in development. It does not collect API keys,
+connect to brokers or place trades. The chart is explicitly illustrative.
+The data sources and trading workflow are plans, not verified integrations.
+
+2. FILES AND LOCAL BACKUP
+
+index.html              Complete page markup (HTML).
+assets/css/main.css     Complete custom page styling (CSS).
+images/research-chart.svg  New scalable concept chart image.
+images/woka-icon.svg     New browser-tab icon.
+CHANGES.txt             This explanation and submission record.
+original-template/      Copy of the supplied HTML, assets, images and licence.
+
+The original-template folder contains a working copy of the starting page.
+Open original-template/index.html to compare it with the new index.html.
+Original supporting scripts and stock images also remain in the main folder,
+but the Woka page no longer loads them. They are not needed by the new design.
+The original template licence and visible attribution have been retained.
+
+3. SIGNIFICANT MODIFICATIONS
+
+A. Content and identity (HTML)
+Before: 'Hello from Cloud Academy!' browser title, 'Dimension' heading,
+placeholder Latin paragraphs, generic contact form and social links.
+After: Woka branding, a meaningful browser title and description, personal
+project copy, research cards, planned workflow, source roadmap and progress.
+Why: The page now communicates a specific project and its purpose.
+Find it: <title>, #intro, #work, #how-it-works and #about in index.html.
+
+B. Fonts and text sizes (CSS)
+Before: Source Sans Pro downloaded from Google Fonts and the template's type
+sizes, light text and widely spaced headings.
+After: A locally available sans-serif font stack for most text; Georgia italic
+for the word 'purpose'; monospace labels; larger, closely spaced headings.
+Why: Gives the page a distinctive hierarchy and works without downloading fonts.
+Find it: body, h1, h2, h3, em and .eyebrow in main.css.
+Example: clamp(2rem, 4vw, 3rem) allows a heading to grow with the screen width,
+while keeping a minimum and maximum size. 'rem' is relative to root text size;
+'vw' is a percentage of the viewport width.
+Font appearance varies slightly depending on the fonts installed on a device.
+
+C. Colour scheme (CSS)
+Before: Dark grey template with white text and a photographic background.
+After: Navy (#0d1b25), teal (#8de0c8), off-white (#f2f4ed) and a pale research
+section (#f1f2eb), with separate muted text and border colours.
+Why: Creates a consistent identity and makes section boundaries clear.
+Find it: :root variables and .approach.
+Example: --teal is a reusable colour variable. color: var(--teal) uses it.
+Changing its definition updates every rule that refers to that variable.
+
+D. Layout and navigation (HTML + CSS)
+Before: Centred opening screen; navigation opened individual articles using
+JavaScript. The rest of the page was hidden until a section was selected.
+After: A spacious, centred Woka homepage with a circular lettermark, brief
+project overview, thin dividing lines and four grouped navigation links.
+The idea, The approach, How it works and The journey open individual panels.
+Each panel has a Close link that returns to the homepage.
+Why: Following review, I preferred the original template's open homepage while
+keeping the calming navy, teal and pale colours of the first Woka design.
+The chart now lives inside The idea panel, keeping the homepage uncluttered.
+Find it: .home-shell, .home-introduction, nav, .detail and .detail:target.
+The template's section-opening concept is retained, with revised content,
+branding, fonts, cards, workflow and a CSS-based implementation.
+
+How the navigation works:
+An HTML link such as href="#work" changes the URL's fragment to #work.
+CSS .detail:target displays the section with the matching id="work".
+CSS .detail:target ~ .home-shell hides the homepage while that panel is open.
+The ~ symbol means a later sibling: another element under the same parent.
+All detail sections appear before .home-shell in the HTML for this reason.
+The Close link points to #home, so no detail section matches :target anymore.
+Browser Back and Forward can follow the section-link history as normal.
+No JavaScript is needed. This is section navigation, not a modal dialog.
+
+E. Images (HTML + SVG)
+Before: Generic template stock images and background photograph.
+After: A new local chart diagram showing sample highs, lows and volume bars.
+A new Woka browser-tab icon is also included.
+Why: The imagery now illustrates the subject of the page.
+Find it: the <img> inside .research-panel and the two new SVG files.
+The chart is a vector image: paths, lines and text stay sharp at different sizes.
+The image has alt text describing its content for people using screen readers.
+Its caption makes clear that it does not show live prices or real results.
+
+F. Icons (HTML + existing icon font)
+Before: Diamond logo and generic social-network icons.
+After: Newspaper, bar-chart, line-chart and compass icons.
+Why: The symbols support the actual research and learning content.
+Find it: classes fa-newspaper-o, fa-bar-chart, fa-line-chart and fa-compass
+in index.html. The existing Font Awesome library is reused locally.
+aria-hidden="true" prevents decorative icons from repeating nearby text to
+screen readers. The new browser-tab icon is linked separately in the <head>.
+
+G. Mobile layout and accessibility (HTML + CSS)
+Added lang="en", a skip-to-content link, meaningful heading order, descriptive
+navigation, visible keyboard focus outlines and image alternative text.
+Removed user-scalable=no so visitors can zoom the page.
+Media queries change multi-column layouts to one column on smaller screens.
+Reduced-motion preferences disable panel entrance animation and link transitions.
+Find it: .skip-link, :focus-visible and the @media rules near the end of CSS.
+These are implemented features; a full accessibility audit has not been run.
+
+H. Simplification (HTML + CSS)
+Removed the unused Elements demo, placeholder form, fake social links, old
+browser-specific stylesheet links and template script tags from the page.
+The page uses plain HTML and CSS with local images and an existing icon font.
+No JavaScript, framework installation or build step is needed to view it.
+Why: The coursework remains straightforward to read, save and explain.

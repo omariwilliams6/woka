@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-labelledby="title desc">
+<title id="title">Concept chart for Woka's pattern research</title>
+<desc id="desc">A schematic price line with recurring lows and highs, followed by volume bars. Illustrative only; no actual prices or predictions.</desc>
+<defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8de0c8" stop-opacity=".19"/><stop offset="1" stop-color="#8de0c8" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#2c404b" stroke-width="1"><path d="M38 55H602M38 105H602M38 155H602M38 205H602M38 252H602"/><path d="M100 35V252M210 35V252M320 35V252M430 35V252M540 35V252" opacity=".5"/></g>
+<path d="M38 195L65 180L89 190L120 150L145 166L174 110L197 135L225 190L250 170L280 120L307 81L332 110L357 185L384 161L413 100L440 57L465 87L490 144L515 114L540 124L568 82L602 100V252H38Z" fill="url(#area)"/>
+<path d="M38 195L65 180L89 190L120 150L145 166L174 110L197 135L225 190L250 170L280 120L307 81L332 110L357 185L384 161L413 100L440 57L465 87L490 144L515 114L540 124L568 82L602 100" fill="none" stroke="#8de0c8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#142631" stroke="#8de0c8" stroke-width="2"><circle cx="225" cy="190" r="5"/><circle cx="357" cy="185" r="5"/><circle cx="307" cy="81" r="5"/><circle cx="440" cy="57" r="5"/></g>
+<g fill="#bdcfd5" font-family="Arial,sans-serif" font-size="12"><text x="196" y="218">Low</text><text x="343" y="213">Low</text><text x="291" y="62">High</text><text x="423" y="37">High</text><text x="38" y="31" font-size="10" letter-spacing="1">ILLUSTRATIVE PRICE MOVEMENT</text></g>
+<g fill="#477e75"><path d="M40 302v-18h13v18zM63 302v-25h13v25zM86 302v-15h13v15zM109 302v-29h13v29zM132 302v-19h13v19zM155 302v-38h13v38zM178 302v-27h13v27zM201 302v-21h13v21zM224 302v-16h13v16zM247 302v-29h13v29zM270 302v-35h13v35zM293 302v-43h13v43zM316 302v-26h13v26zM339 302v-19h13v19zM362 302v-28h13v28zM385 302v-38h13v38zM408 302v-48h13v48zM431 302v-40h13v40zM454 302v-31h13v31zM477 302v-22h13v22zM500 302v-35h13v35zM523 302v-27h13v27zM546 302v-40h13v40zM569 302v-30h13v30zM592 302v-24h10v24z"/></g>
+<text x="38" y="322" fill="#aabcc4" font-family="Arial,sans-serif" font-size="10" letter-spacing="1">ILLUSTRATIVE VOLUME</text>
+</svg>

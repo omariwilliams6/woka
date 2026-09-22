@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Adapted from Dimension by HTML5 UP, licensed under CC BY 3.0. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Woka: Omari's trading-bot project exploring halal stock screening, fresh news, trading volume and chart patterns.">
+  <title>Woka — Research first. Trade with purpose.</title>
+  <link rel="icon" href="images/woka-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to introduction</a>
+  <div id="wrapper">
+    <main id="main">
+
+      <section id="intro" class="detail" aria-labelledby="intro-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <p class="eyebrow">Introducing Woka</p>
+        <h2 id="intro-title">Research first.<br>Trade with <em>purpose.</em></h2>
+        <p class="intro-copy">Woka is my trading-bot project. The idea is to look for halal stocks with a reason to move, using company news, unusual trading activity and recurring price patterns to investigate potential opportunities.</p>
+        <figure class="research-panel">
+          <div class="panel-heading"><span><span class="fa fa-line-chart" aria-hidden="true"></span> A closer look at the signals</span><span class="small-label">CONCEPT</span></div>
+          <div class="chart-heading"><div><p class="eyebrow">Pattern research</p><h2>Look beyond the price.</h2></div><span class="chart-symbol" aria-hidden="true">↗</span></div>
+          <img class="chart-image" src="images/research-chart.svg" width="640" height="330" alt="Illustrative chart showing fluctuating prices, marked recurring lows and highs, and volume bars. This is a concept diagram, not market data.">
+          <div class="signal-tags"><span><span class="status-dot" aria-hidden="true"></span> Fresh news</span><span>Relative volume</span><span>Chart patterns</span></div>
+          <figcaption>Illustrative signals only · No live market data</figcaption>
+        </figure>
+
+        <p class="intro-copy">I'm exploring how these signals could work together with a user's Trading 212 account. Separate components and earlier experiments have shaped the idea; connecting and testing them is the next part of the journey.</p>
+        <a class="text-link" href="#work">Explore the approach <span aria-hidden="true">→</span></a>
+      </section>
+      <!-- WORK: three research cards replace the original placeholder paragraphs. -->
+      <section id="work" class="detail approach" aria-labelledby="approach-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <div class="container">
+          <div class="section-heading"><div><p class="eyebrow">01 / The approach</p><h2 id="approach-title">Find the reason<br>behind the move.</h2></div><p>Woka starts with halal suitability, then looks for a compelling combination of news, activity and price behaviour.</p></div>
+          <div class="card-grid">
+            <article class="research-card"><div class="card-top"><span class="fa fa-newspaper-o" aria-hidden="true"></span><span>01</span></div><h3>Fresh information.</h3><p>Explore recent company news and online discussion to understand what could be drawing attention to a stock.</p><p class="card-foot">News + social momentum</p></article>
+            <article class="research-card"><div class="card-top"><span class="fa fa-bar-chart" aria-hidden="true"></span><span>02</span></div><h3>Meaningful activity.</h3><p>Look for stocks trading at a higher volume than usual that day, adding context to the movement in price.</p><p class="card-foot">Daily relative volume</p></article>
+            <article class="research-card"><div class="card-top"><span class="fa fa-line-chart" aria-hidden="true"></span><span>03</span></div><h3>Recurring patterns.</h3><p>Study repeated lows and highs to investigate potential entries and exits. A familiar pattern is a signal to research, not a certainty.</p><p class="card-foot">Price behaviour + timing</p></article>
+          </div>
+          <div class="screening-note"><span class="fa fa-compass" aria-hidden="true"></span><p><strong>Halal suitability comes first.</strong> Defining and validating the screening criteria is part of the development work.</p></div>
+        </div>
+      </section>
+
+      <!-- New section: a readable overview of the proposed product flow. -->
+      <section id="how-it-works" class="detail" aria-labelledby="flow-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <div class="section-heading"><div><p class="eyebrow">02 / The planned experience</p><h2 id="flow-title">Connect. Research.<br>Make an informed move.</h2></div><p>The ambition is one connected workflow, from a user's Trading 212 account to research-informed trading decisions.</p></div>
+        <ol class="steps">
+          <li><span class="step-number">01</span><div><h3>Connect Trading 212</h3><p>The planned starting point is an API connection to the user's trading account. The account and sign-in experience is still being explored.</p></div></li>
+          <li><span class="step-number">02</span><div><h3>Bring the research together</h3><p>Combine screening, news, social activity and market signals to build a fuller picture of each potential opportunity.</p></div></li>
+          <li><span class="step-number">03</span><div><h3>Develop the decision process</h3><p>Work towards automated decisions and order execution, with testing and confirmation of the platform's supported capabilities.</p></div></li>
+        </ol>
+        <aside class="sources" aria-labelledby="sources-title"><div><p class="eyebrow">Research roadmap</p><h3 id="sources-title">Potential sources to explore</h3></div><div class="source-list"><span>Webull <small>Market data</small></span><span>LunarCrush <small>Social activity</small></span><span>FMP <small>Financial news</small></span><span>Arkane Scanner <small>Livestream signals</small></span></div><p class="sources-note">Proposed sources, not connected services. Data access, permitted use and integration options still need to be confirmed.</p></aside>
+      </section>
+
+      <!-- ABOUT: the author's actual progress, without invented results. -->
+      <section id="about" class="detail journey" aria-labelledby="journey-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a><div class="container journey-grid">
+        <div><p class="eyebrow">03 / Behind the build</p><h2 id="journey-title">An idea that grows<br>as I do.</h2><p class="author">Omari <span>/ Creator of Woka</span></p></div>
+        <div class="journey-copy"><p class="lead">“I've built different parts of the idea. Now I'm working towards bringing them together.”</p><p>Woka builds on separate components and earlier experiments I've developed. It's a way to turn my interest in trading and technology into something practical, while continuing to learn.</p><div class="progress-item"><span class="progress-marker" aria-hidden="true"></span><div><h3>So far</h3><p>Individual components and earlier project ideas explored.</p></div><span class="small-label">EXPLORING</span></div><div class="progress-item"><span class="progress-marker next" aria-hidden="true"></span><div><h3>Up next</h3><p>Review the existing pieces, test API capabilities and connect the research workflow.</p></div><span class="small-label">PLANNED</span></div></div>
+      </div></section>
+
+      <!-- The open, centred homepage follows the supplied Dimension template. -->
+      <section id="home" class="home-shell" aria-labelledby="home-title">
+        <header id="header">
+          <a class="home-logo" href="#home" aria-label="Woka home">w<span>.</span></a>
+          <div class="home-introduction">
+            <p class="eyebrow">An independent project by Omari</p>
+            <h1 id="home-title">woka<span>.</span></h1>
+            <h2>Research first. Trade with <em>purpose.</em></h2>
+            <p class="home-summary">A trading bot in development, bringing together halal stock screening, fresh news, trading volume and recurring chart patterns.</p>
+            <p class="home-outlook">The vision: connect Trading 212, bring the research together and develop a more informed approach to trading. Built one lesson at a time.</p>
+          </div>
+          <nav aria-label="Explore Woka">
+            <a href="#intro">The idea</a><a href="#work">The approach</a><a href="#how-it-works">How it works</a><a href="#about">The journey</a>
+          </nav>
+          <p class="home-status"><span class="status-dot" aria-hidden="true"></span> In development <span aria-hidden="true">·</span> Built from curiosity</p>
+        </header>
+      </section>
+    </main>
+    <footer id="footer" class="container site-footer"><div><a class="brand footer-brand" href="#home">woka<span class="brand-dot">.</span></a><p>A project in development. A process of learning.</p></div><div class="footer-details"><p>Project showcase · No live trading on this page</p><p>Adapted from <a href="https://html5up.net/dimension">Dimension by HTML5 UP</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p></div></footer>
+  </div>
+</body>
+</html>

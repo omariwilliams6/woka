@@ -1,0 +1,155 @@
+/* Woka — adapted from Dimension by HTML5 UP (CC BY 3.0).
+   Centred homepage and individually opened sections, using HTML and CSS. */
+@import url("font-awesome.min.css");
+
+/* Shared palette: retained from the first Woka design. */
+:root {
+  --navy: #0d1b25;
+  --panel: #142631;
+  --teal: #8de0c8;
+  --text: #f2f4ed;
+  --muted: #aabcc4;
+  --line: #2c404b;
+  --paper: #f1f2eb;
+  --ink: #142a32;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: var(--navy); color: var(--text); font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; font-size: 16px; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--teal); }
+a:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.15; }
+h1, h2 { letter-spacing: -0.05em; font-weight: 600; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.2rem; letter-spacing: -0.03em; }
+em { color: var(--teal); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+#wrapper { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+#main { flex: 1; display: grid; align-items: center; padding: 48px 24px; }
+.eyebrow, .small-label { font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow { color: var(--teal); margin-bottom: 20px; }
+.small-label { font-size: 0.56rem; color: var(--muted); letter-spacing: 0.08em; }
+.status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.skip-link { position: absolute; top: -100px; left: 20px; padding: 12px 20px; background: var(--teal); color: var(--navy); z-index: 5; }
+.skip-link:focus { top: 12px; color: var(--navy); }
+
+/* Open homepage: generous space, thin borders and the template's grouped links. */
+.home-shell { width: min(760px, 100%); margin-inline: auto; text-align: center; padding-block: 20px; }
+.home-logo { display: grid; place-content: center; grid-auto-flow: column; width: 82px; height: 82px; border: 1px solid #78998f; border-radius: 50%; margin: 0 auto 46px; font-size: 2.7rem; font-weight: 600; letter-spacing: -0.1em; position: relative; }
+.home-logo span, h1 span, .brand-dot { color: var(--teal); }
+.home-logo::after { content: ""; position: absolute; height: 47px; width: 1px; background: var(--line); top: 100%; left: 50%; }
+.home-introduction { padding: 36px 24px; border-block: 1px solid #48616a; }
+.home-introduction .eyebrow { font-size: 0.62rem; margin-bottom: 10px; }
+h1 { font-size: clamp(4rem, 9vw, 5.6rem); margin-bottom: 15px; }
+.home-introduction h2 { font-size: clamp(1.4rem, 3.4vw, 1.9rem); letter-spacing: -0.035em; }
+.home-summary { max-width: 580px; margin: 23px auto 0; color: #c2d0d5; font-size: 0.96rem; }
+.home-outlook { max-width: 560px; margin: 15px auto 0; color: var(--muted); font-size: 0.81rem; }
+nav { display: inline-flex; margin-top: 38px; border: 1px solid #48616a; border-radius: 5px; position: relative; }
+nav::before { content: ""; position: absolute; bottom: 100%; left: 50%; height: 39px; width: 1px; background: var(--line); }
+nav a { min-width: 132px; padding: 13px 20px; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.1em; transition: background 160ms ease; }
+nav a + a { border-left: 1px solid #48616a; }
+nav a:hover { background: var(--panel); }
+.home-status { display: flex; justify-content: center; gap: 10px; align-items: center; margin-top: 24px; color: var(--muted); font-size: 0.65rem; }
+
+/* :target matches the section named in the URL, e.g. #work.
+   The sibling rule hides the homepage only while a detail section is open.
+   A normal link to #home closes it; browser Back/Forward also work. */
+.detail { display: none; position: relative; width: min(900px, 100%); margin-inline: auto; padding: 65px 40px 40px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.detail:target { display: block; animation: reveal 220ms ease-out; }
+.detail:target ~ .home-shell { display: none; }
+.close-link { position: absolute; top: 17px; right: 23px; display: flex; align-items: center; gap: 9px; font-size: 0.7rem; color: var(--muted); }
+.close-link span { font-size: 1.7rem; line-height: 1; }
+.intro-copy { color: var(--muted); margin-block: 24px; font-size: 0.94rem; }
+.text-link { display: inline-block; border-bottom: 1px solid #668e83; padding-bottom: 6px; color: var(--teal); font-size: 0.83rem; }
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Concept image and its caption */
+.research-panel { max-width: 590px; margin: 28px auto; background: var(--panel); border: 1px solid #3a5058; border-radius: 8px; overflow: hidden; }
+.panel-heading { padding: 16px 21px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 0.7rem; }
+.panel-heading .fa { color: var(--teal); margin-right: 7px; }
+.chart-heading { display: flex; justify-content: space-between; gap: 12px; padding: 25px 25px 0; }
+.chart-heading .eyebrow { font-size: 0.57rem; margin-bottom: 8px; }
+.chart-heading h2 { font-size: 1.5rem; letter-spacing: -0.04em; }
+.chart-symbol { color: var(--teal); font-size: 2rem; }
+.chart-image { width: 100%; }
+.signal-tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 22px; }
+.signal-tags > span { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #3a5058; padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; color: #d5e2e4; }
+figcaption { color: var(--muted); font-size: 0.62rem; padding: 15px 22px 20px; }
+
+/* The detailed research section retains its calming pale background. */
+.approach { background: var(--paper); color: var(--ink); }
+.section-heading { margin-bottom: 32px; }
+.section-heading > p { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 630px; }
+.approach .eyebrow { color: #326758; }
+.approach .section-heading > p, .approach .close-link { color: #52666b; }
+.approach a:focus-visible { outline-color: #326758; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.research-card { border: 1px solid #cdd5cd; border-radius: 5px; padding: 21px; }
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.card-top .fa { font-size: 1.4rem; color: #326758; }
+.card-top > span:last-child { font-family: Consolas, monospace; font-size: 0.7rem; color: #62736e; }
+.research-card h3 { margin-bottom: 15px; }
+.research-card > p { font-size: 0.84rem; color: #52666b; }
+.research-card .card-foot { margin-top: 24px; padding-top: 17px; border-top: 1px solid #cdd5cd; font-size: 0.65rem; color: #326758; }
+.screening-note { display: flex; gap: 12px; align-items: center; margin-top: 26px; color: #52666b; font-size: 0.76rem; }
+.screening-note .fa { font-size: 1.3rem; color: #326758; }
+.screening-note strong { color: var(--ink); }
+
+/* Planned workflow and sources */
+.steps { display: grid; gap: 24px; list-style: none; margin: 0; padding: 0; }
+.steps li { display: flex; gap: 24px; border-top: 1px solid var(--line); padding-top: 22px; }
+.step-number { font-family: Consolas, monospace; color: var(--teal); font-size: 0.75rem; }
+.steps h3 { font-size: 1.12rem; margin-bottom: 10px; }
+.steps p { color: var(--muted); font-size: 0.85rem; }
+.sources { margin-top: 35px; border: 1px solid #3a5058; border-radius: 5px; padding: 25px; }
+.sources .eyebrow { margin-bottom: 8px; font-size: 0.6rem; }
+.sources h3 { font-size: 1rem; }
+.source-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-block: 25px; }
+.source-list > span { border-left: 2px solid #486b68; padding-left: 12px; font-size: 0.9rem; }
+.source-list small { display: block; color: var(--muted); font-size: 0.7rem; margin-top: 3px; }
+.sources-note { font-size: 0.7rem; color: var(--muted); }
+
+/* Personal journey and retained attribution */
+.journey-grid { display: grid; gap: 30px; }
+.author { margin-top: 23px; font-size: 0.85rem; }
+.author span { color: var(--muted); margin-left: 8px; font-size: 0.75rem; }
+.journey-copy > p { color: var(--muted); font-size: 0.88rem; }
+.journey-copy .lead { font-size: 1.4rem; color: var(--text); line-height: 1.5; letter-spacing: -0.025em; margin-bottom: 19px; }
+.progress-item { display: flex; align-items: baseline; gap: 14px; border-top: 1px solid var(--line); padding-top: 21px; margin-top: 25px; }
+.progress-item > div { flex: 1; }
+.progress-item h3 { font-size: 0.85rem; margin-bottom: 5px; }
+.progress-item p { color: var(--muted); font-size: 0.76rem; }
+.progress-marker { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.progress-marker.next { background: transparent; border: 1px solid var(--teal); }
+.site-footer { text-align: center; padding: 0 24px 27px; }
+.footer-brand { display: none; }
+.site-footer p { color: var(--muted); font-size: 0.62rem; margin-top: 6px; }
+.footer-details a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Smaller screens: preserve breathing room and readable cards. */
+@media (max-width: 700px) {
+  #main { padding: 28px 18px; }
+  .home-introduction { padding: 30px 0; }
+  .home-logo { width: 68px; height: 68px; font-size: 2.2rem; }
+  nav { display: grid; grid-template-columns: repeat(2, 1fr); width: min(400px, 100%); margin-inline: auto; }
+  nav a { min-width: 0; padding: 15px 12px; }
+  nav a:nth-child(3) { border-left: 0; }
+  nav a:nth-child(n+3) { border-top: 1px solid #48616a; }
+  .detail { padding: 60px 22px 28px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .source-list { grid-template-columns: repeat(2, 1fr); }
+  .panel-heading { padding-inline: 14px; font-size: 0.65rem; }
+  .chart-heading { padding-inline: 16px; }
+  .chart-heading h2 { font-size: 1.25rem; }
+  .sources { padding: 18px; }
+}
+@media (max-width: 380px) {
+  .progress-item { flex-wrap: wrap; }
+  .progress-item .small-label { margin-left: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail:target { animation: none; }
+  nav a { transition: none; }
+}

@@ -1,0 +1,312 @@
+WOKA — COPY INTO YOUR VIRTUAL ENVIRONMENT
+
+Use the supplied Dimension template as your starting folder.
+Replace the ENTIRE contents of the two REPLACE files below.
+Create the two ADD files at the exact paths shown and paste their contents.
+Copy only between BEGIN FILE and END FILE; do not copy the marker lines.
+Save every file. Paths and filenames are case-sensitive.
+
+KEEP THESE EXISTING TEMPLATE FILES:
+- assets/css/font-awesome.min.css
+- assets/fonts/ (the existing Font Awesome font files)
+- LICENSE.MD
+The main CSS imports the icon stylesheet, which uses those fonts.
+
+NO FILE DELETIONS ARE REQUIRED.
+The new HTML removes the old script links, stock-image references, placeholder
+contact form, social links and Elements demo. Existing unused files may remain.
+The new HTML/CSS adds Woka content, the centred homepage, separate section
+panels, colours, typography, responsive styles and accessibility features.
+No JavaScript file changes or installations are needed.
+
+OPTIONAL DOCUMENTATION:
+CHANGES.txt is your explanation and submission guide, not website code.
+original-template/ is a local backup; do not copy it over your finished page.
+This transfer guide is not part of the website.
+
+IF YOUR IDE HAS ONLY HTML AND CSS TABS:
+Paste main.css into CSS. If HTML expects a body fragment, paste only the
+content inside <body> ... </body> from index.html. Otherwise use the full HTML.
+Upload the image SVGs and existing Font Awesome stylesheet/fonts using the
+IDE's asset upload feature, and use their supplied paths in the code.
+A tab-only editor cannot resolve laptop-relative asset paths automatically.
+
+
+========================================================================
+REPLACE index.html
+========================================================================
+BEGIN FILE
+<!DOCTYPE html>
+<!-- Adapted from Dimension by HTML5 UP, licensed under CC BY 3.0. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Woka: Omari's trading-bot project exploring halal stock screening, fresh news, trading volume and chart patterns.">
+  <title>Woka — Research first. Trade with purpose.</title>
+  <link rel="icon" href="images/woka-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to introduction</a>
+  <div id="wrapper">
+    <main id="main">
+
+      <section id="intro" class="detail" aria-labelledby="intro-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <p class="eyebrow">Introducing Woka</p>
+        <h2 id="intro-title">Research first.<br>Trade with <em>purpose.</em></h2>
+        <p class="intro-copy">Woka is my trading-bot project. The idea is to look for halal stocks with a reason to move, using company news, unusual trading activity and recurring price patterns to investigate potential opportunities.</p>
+        <figure class="research-panel">
+          <div class="panel-heading"><span><span class="fa fa-line-chart" aria-hidden="true"></span> A closer look at the signals</span><span class="small-label">CONCEPT</span></div>
+          <div class="chart-heading"><div><p class="eyebrow">Pattern research</p><h2>Look beyond the price.</h2></div><span class="chart-symbol" aria-hidden="true">↗</span></div>
+          <img class="chart-image" src="images/research-chart.svg" width="640" height="330" alt="Illustrative chart showing fluctuating prices, marked recurring lows and highs, and volume bars. This is a concept diagram, not market data.">
+          <div class="signal-tags"><span><span class="status-dot" aria-hidden="true"></span> Fresh news</span><span>Relative volume</span><span>Chart patterns</span></div>
+          <figcaption>Illustrative signals only · No live market data</figcaption>
+        </figure>
+
+        <p class="intro-copy">I'm exploring how these signals could work together with a user's Trading 212 account. Separate components and earlier experiments have shaped the idea; connecting and testing them is the next part of the journey.</p>
+        <a class="text-link" href="#work">Explore the approach <span aria-hidden="true">→</span></a>
+      </section>
+      <!-- WORK: three research cards replace the original placeholder paragraphs. -->
+      <section id="work" class="detail approach" aria-labelledby="approach-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <div class="container">
+          <div class="section-heading"><div><p class="eyebrow">01 / The approach</p><h2 id="approach-title">Find the reason<br>behind the move.</h2></div><p>Woka starts with halal suitability, then looks for a compelling combination of news, activity and price behaviour.</p></div>
+          <div class="card-grid">
+            <article class="research-card"><div class="card-top"><span class="fa fa-newspaper-o" aria-hidden="true"></span><span>01</span></div><h3>Fresh information.</h3><p>Explore recent company news and online discussion to understand what could be drawing attention to a stock.</p><p class="card-foot">News + social momentum</p></article>
+            <article class="research-card"><div class="card-top"><span class="fa fa-bar-chart" aria-hidden="true"></span><span>02</span></div><h3>Meaningful activity.</h3><p>Look for stocks trading at a higher volume than usual that day, adding context to the movement in price.</p><p class="card-foot">Daily relative volume</p></article>
+            <article class="research-card"><div class="card-top"><span class="fa fa-line-chart" aria-hidden="true"></span><span>03</span></div><h3>Recurring patterns.</h3><p>Study repeated lows and highs to investigate potential entries and exits. A familiar pattern is a signal to research, not a certainty.</p><p class="card-foot">Price behaviour + timing</p></article>
+          </div>
+          <div class="screening-note"><span class="fa fa-compass" aria-hidden="true"></span><p><strong>Halal suitability comes first.</strong> Defining and validating the screening criteria is part of the development work.</p></div>
+        </div>
+      </section>
+
+      <!-- New section: a readable overview of the proposed product flow. -->
+      <section id="how-it-works" class="detail" aria-labelledby="flow-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a>
+        <div class="section-heading"><div><p class="eyebrow">02 / The planned experience</p><h2 id="flow-title">Connect. Research.<br>Make an informed move.</h2></div><p>The ambition is one connected workflow, from a user's Trading 212 account to research-informed trading decisions.</p></div>
+        <ol class="steps">
+          <li><span class="step-number">01</span><div><h3>Connect Trading 212</h3><p>The planned starting point is an API connection to the user's trading account. The account and sign-in experience is still being explored.</p></div></li>
+          <li><span class="step-number">02</span><div><h3>Bring the research together</h3><p>Combine screening, news, social activity and market signals to build a fuller picture of each potential opportunity.</p></div></li>
+          <li><span class="step-number">03</span><div><h3>Develop the decision process</h3><p>Work towards automated decisions and order execution, with testing and confirmation of the platform's supported capabilities.</p></div></li>
+        </ol>
+        <aside class="sources" aria-labelledby="sources-title"><div><p class="eyebrow">Research roadmap</p><h3 id="sources-title">Potential sources to explore</h3></div><div class="source-list"><span>Webull <small>Market data</small></span><span>LunarCrush <small>Social activity</small></span><span>FMP <small>Financial news</small></span><span>Arkane Scanner <small>Livestream signals</small></span></div><p class="sources-note">Proposed sources, not connected services. Data access, permitted use and integration options still need to be confirmed.</p></aside>
+      </section>
+
+      <!-- ABOUT: the author's actual progress, without invented results. -->
+      <section id="about" class="detail journey" aria-labelledby="journey-title">
+        <a class="close-link" href="#home" aria-label="Close section and return home">Close <span aria-hidden="true">×</span></a><div class="container journey-grid">
+        <div><p class="eyebrow">03 / Behind the build</p><h2 id="journey-title">An idea that grows<br>as I do.</h2><p class="author">Omari <span>/ Creator of Woka</span></p></div>
+        <div class="journey-copy"><p class="lead">“I've built different parts of the idea. Now I'm working towards bringing them together.”</p><p>Woka builds on separate components and earlier experiments I've developed. It's a way to turn my interest in trading and technology into something practical, while continuing to learn.</p><div class="progress-item"><span class="progress-marker" aria-hidden="true"></span><div><h3>So far</h3><p>Individual components and earlier project ideas explored.</p></div><span class="small-label">EXPLORING</span></div><div class="progress-item"><span class="progress-marker next" aria-hidden="true"></span><div><h3>Up next</h3><p>Review the existing pieces, test API capabilities and connect the research workflow.</p></div><span class="small-label">PLANNED</span></div></div>
+      </div></section>
+
+      <!-- The open, centred homepage follows the supplied Dimension template. -->
+      <section id="home" class="home-shell" aria-labelledby="home-title">
+        <header id="header">
+          <a class="home-logo" href="#home" aria-label="Woka home">w<span>.</span></a>
+          <div class="home-introduction">
+            <p class="eyebrow">An independent project by Omari</p>
+            <h1 id="home-title">woka<span>.</span></h1>
+            <h2>Research first. Trade with <em>purpose.</em></h2>
+            <p class="home-summary">A trading bot in development, bringing together halal stock screening, fresh news, trading volume and recurring chart patterns.</p>
+            <p class="home-outlook">The vision: connect Trading 212, bring the research together and develop a more informed approach to trading. Built one lesson at a time.</p>
+          </div>
+          <nav aria-label="Explore Woka">
+            <a href="#intro">The idea</a><a href="#work">The approach</a><a href="#how-it-works">How it works</a><a href="#about">The journey</a>
+          </nav>
+          <p class="home-status"><span class="status-dot" aria-hidden="true"></span> In development <span aria-hidden="true">·</span> Built from curiosity</p>
+        </header>
+      </section>
+    </main>
+    <footer id="footer" class="container site-footer"><div><a class="brand footer-brand" href="#home">woka<span class="brand-dot">.</span></a><p>A project in development. A process of learning.</p></div><div class="footer-details"><p>Project showcase · No live trading on this page</p><p>Adapted from <a href="https://html5up.net/dimension">Dimension by HTML5 UP</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p></div></footer>
+  </div>
+</body>
+</html>
+END FILE
+
+========================================================================
+REPLACE assets/css/main.css
+========================================================================
+BEGIN FILE
+/* Woka — adapted from Dimension by HTML5 UP (CC BY 3.0).
+   Centred homepage and individually opened sections, using HTML and CSS. */
+@import url("font-awesome.min.css");
+
+/* Shared palette: retained from the first Woka design. */
+:root {
+  --navy: #0d1b25;
+  --panel: #142631;
+  --teal: #8de0c8;
+  --text: #f2f4ed;
+  --muted: #aabcc4;
+  --line: #2c404b;
+  --paper: #f1f2eb;
+  --ink: #142a32;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: var(--navy); color: var(--text); font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; font-size: 16px; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--teal); }
+a:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.15; }
+h1, h2 { letter-spacing: -0.05em; font-weight: 600; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.2rem; letter-spacing: -0.03em; }
+em { color: var(--teal); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+#wrapper { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+#main { flex: 1; display: grid; align-items: center; padding: 48px 24px; }
+.eyebrow, .small-label { font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow { color: var(--teal); margin-bottom: 20px; }
+.small-label { font-size: 0.56rem; color: var(--muted); letter-spacing: 0.08em; }
+.status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.skip-link { position: absolute; top: -100px; left: 20px; padding: 12px 20px; background: var(--teal); color: var(--navy); z-index: 5; }
+.skip-link:focus { top: 12px; color: var(--navy); }
+
+/* Open homepage: generous space, thin borders and the template's grouped links. */
+.home-shell { width: min(760px, 100%); margin-inline: auto; text-align: center; padding-block: 20px; }
+.home-logo { display: grid; place-content: center; grid-auto-flow: column; width: 82px; height: 82px; border: 1px solid #78998f; border-radius: 50%; margin: 0 auto 46px; font-size: 2.7rem; font-weight: 600; letter-spacing: -0.1em; position: relative; }
+.home-logo span, h1 span, .brand-dot { color: var(--teal); }
+.home-logo::after { content: ""; position: absolute; height: 47px; width: 1px; background: var(--line); top: 100%; left: 50%; }
+.home-introduction { padding: 36px 24px; border-block: 1px solid #48616a; }
+.home-introduction .eyebrow { font-size: 0.62rem; margin-bottom: 10px; }
+h1 { font-size: clamp(4rem, 9vw, 5.6rem); margin-bottom: 15px; }
+.home-introduction h2 { font-size: clamp(1.4rem, 3.4vw, 1.9rem); letter-spacing: -0.035em; }
+.home-summary { max-width: 580px; margin: 23px auto 0; color: #c2d0d5; font-size: 0.96rem; }
+.home-outlook { max-width: 560px; margin: 15px auto 0; color: var(--muted); font-size: 0.81rem; }
+nav { display: inline-flex; margin-top: 38px; border: 1px solid #48616a; border-radius: 5px; position: relative; }
+nav::before { content: ""; position: absolute; bottom: 100%; left: 50%; height: 39px; width: 1px; background: var(--line); }
+nav a { min-width: 132px; padding: 13px 20px; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.1em; transition: background 160ms ease; }
+nav a + a { border-left: 1px solid #48616a; }
+nav a:hover { background: var(--panel); }
+.home-status { display: flex; justify-content: center; gap: 10px; align-items: center; margin-top: 24px; color: var(--muted); font-size: 0.65rem; }
+
+/* :target matches the section named in the URL, e.g. #work.
+   The sibling rule hides the homepage only while a detail section is open.
+   A normal link to #home closes it; browser Back/Forward also work. */
+.detail { display: none; position: relative; width: min(900px, 100%); margin-inline: auto; padding: 65px 40px 40px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.detail:target { display: block; animation: reveal 220ms ease-out; }
+.detail:target ~ .home-shell { display: none; }
+.close-link { position: absolute; top: 17px; right: 23px; display: flex; align-items: center; gap: 9px; font-size: 0.7rem; color: var(--muted); }
+.close-link span { font-size: 1.7rem; line-height: 1; }
+.intro-copy { color: var(--muted); margin-block: 24px; font-size: 0.94rem; }
+.text-link { display: inline-block; border-bottom: 1px solid #668e83; padding-bottom: 6px; color: var(--teal); font-size: 0.83rem; }
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Concept image and its caption */
+.research-panel { max-width: 590px; margin: 28px auto; background: var(--panel); border: 1px solid #3a5058; border-radius: 8px; overflow: hidden; }
+.panel-heading { padding: 16px 21px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 0.7rem; }
+.panel-heading .fa { color: var(--teal); margin-right: 7px; }
+.chart-heading { display: flex; justify-content: space-between; gap: 12px; padding: 25px 25px 0; }
+.chart-heading .eyebrow { font-size: 0.57rem; margin-bottom: 8px; }
+.chart-heading h2 { font-size: 1.5rem; letter-spacing: -0.04em; }
+.chart-symbol { color: var(--teal); font-size: 2rem; }
+.chart-image { width: 100%; }
+.signal-tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 22px; }
+.signal-tags > span { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #3a5058; padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; color: #d5e2e4; }
+figcaption { color: var(--muted); font-size: 0.62rem; padding: 15px 22px 20px; }
+
+/* The detailed research section retains its calming pale background. */
+.approach { background: var(--paper); color: var(--ink); }
+.section-heading { margin-bottom: 32px; }
+.section-heading > p { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 630px; }
+.approach .eyebrow { color: #326758; }
+.approach .section-heading > p, .approach .close-link { color: #52666b; }
+.approach a:focus-visible { outline-color: #326758; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.research-card { border: 1px solid #cdd5cd; border-radius: 5px; padding: 21px; }
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.card-top .fa { font-size: 1.4rem; color: #326758; }
+.card-top > span:last-child { font-family: Consolas, monospace; font-size: 0.7rem; color: #62736e; }
+.research-card h3 { margin-bottom: 15px; }
+.research-card > p { font-size: 0.84rem; color: #52666b; }
+.research-card .card-foot { margin-top: 24px; padding-top: 17px; border-top: 1px solid #cdd5cd; font-size: 0.65rem; color: #326758; }
+.screening-note { display: flex; gap: 12px; align-items: center; margin-top: 26px; color: #52666b; font-size: 0.76rem; }
+.screening-note .fa { font-size: 1.3rem; color: #326758; }
+.screening-note strong { color: var(--ink); }
+
+/* Planned workflow and sources */
+.steps { display: grid; gap: 24px; list-style: none; margin: 0; padding: 0; }
+.steps li { display: flex; gap: 24px; border-top: 1px solid var(--line); padding-top: 22px; }
+.step-number { font-family: Consolas, monospace; color: var(--teal); font-size: 0.75rem; }
+.steps h3 { font-size: 1.12rem; margin-bottom: 10px; }
+.steps p { color: var(--muted); font-size: 0.85rem; }
+.sources { margin-top: 35px; border: 1px solid #3a5058; border-radius: 5px; padding: 25px; }
+.sources .eyebrow { margin-bottom: 8px; font-size: 0.6rem; }
+.sources h3 { font-size: 1rem; }
+.source-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-block: 25px; }
+.source-list > span { border-left: 2px solid #486b68; padding-left: 12px; font-size: 0.9rem; }
+.source-list small { display: block; color: var(--muted); font-size: 0.7rem; margin-top: 3px; }
+.sources-note { font-size: 0.7rem; color: var(--muted); }
+
+/* Personal journey and retained attribution */
+.journey-grid { display: grid; gap: 30px; }
+.author { margin-top: 23px; font-size: 0.85rem; }
+.author span { color: var(--muted); margin-left: 8px; font-size: 0.75rem; }
+.journey-copy > p { color: var(--muted); font-size: 0.88rem; }
+.journey-copy .lead { font-size: 1.4rem; color: var(--text); line-height: 1.5; letter-spacing: -0.025em; margin-bottom: 19px; }
+.progress-item { display: flex; align-items: baseline; gap: 14px; border-top: 1px solid var(--line); padding-top: 21px; margin-top: 25px; }
+.progress-item > div { flex: 1; }
+.progress-item h3 { font-size: 0.85rem; margin-bottom: 5px; }
+.progress-item p { color: var(--muted); font-size: 0.76rem; }
+.progress-marker { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.progress-marker.next { background: transparent; border: 1px solid var(--teal); }
+.site-footer { text-align: center; padding: 0 24px 27px; }
+.footer-brand { display: none; }
+.site-footer p { color: var(--muted); font-size: 0.62rem; margin-top: 6px; }
+.footer-details a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Smaller screens: preserve breathing room and readable cards. */
+@media (max-width: 700px) {
+  #main { padding: 28px 18px; }
+  .home-introduction { padding: 30px 0; }
+  .home-logo { width: 68px; height: 68px; font-size: 2.2rem; }
+  nav { display: grid; grid-template-columns: repeat(2, 1fr); width: min(400px, 100%); margin-inline: auto; }
+  nav a { min-width: 0; padding: 15px 12px; }
+  nav a:nth-child(3) { border-left: 0; }
+  nav a:nth-child(n+3) { border-top: 1px solid #48616a; }
+  .detail { padding: 60px 22px 28px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .source-list { grid-template-columns: repeat(2, 1fr); }
+  .panel-heading { padding-inline: 14px; font-size: 0.65rem; }
+  .chart-heading { padding-inline: 16px; }
+  .chart-heading h2 { font-size: 1.25rem; }
+  .sources { padding: 18px; }
+}
+@media (max-width: 380px) {
+  .progress-item { flex-wrap: wrap; }
+  .progress-item .small-label { margin-left: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail:target { animation: none; }
+  nav a { transition: none; }
+}
+END FILE
+
+========================================================================
+ADD images/research-chart.svg
+========================================================================
+BEGIN FILE
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-labelledby="title desc">
+<title id="title">Concept chart for Woka's pattern research</title>
+<desc id="desc">A schematic price line with recurring lows and highs, followed by volume bars. Illustrative only; no actual prices or predictions.</desc>
+<defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8de0c8" stop-opacity=".19"/><stop offset="1" stop-color="#8de0c8" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#2c404b" stroke-width="1"><path d="M38 55H602M38 105H602M38 155H602M38 205H602M38 252H602"/><path d="M100 35V252M210 35V252M320 35V252M430 35V252M540 35V252" opacity=".5"/></g>
+<path d="M38 195L65 180L89 190L120 150L145 166L174 110L197 135L225 190L250 170L280 120L307 81L332 110L357 185L384 161L413 100L440 57L465 87L490 144L515 114L540 124L568 82L602 100V252H38Z" fill="url(#area)"/>
+<path d="M38 195L65 180L89 190L120 150L145 166L174 110L197 135L225 190L250 170L280 120L307 81L332 110L357 185L384 161L413 100L440 57L465 87L490 144L515 114L540 124L568 82L602 100" fill="none" stroke="#8de0c8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#142631" stroke="#8de0c8" stroke-width="2"><circle cx="225" cy="190" r="5"/><circle cx="357" cy="185" r="5"/><circle cx="307" cy="81" r="5"/><circle cx="440" cy="57" r="5"/></g>
+<g fill="#bdcfd5" font-family="Arial,sans-serif" font-size="12"><text x="196" y="218">Low</text><text x="343" y="213">Low</text><text x="291" y="62">High</text><text x="423" y="37">High</text><text x="38" y="31" font-size="10" letter-spacing="1">ILLUSTRATIVE PRICE MOVEMENT</text></g>
+<g fill="#477e75"><path d="M40 302v-18h13v18zM63 302v-25h13v25zM86 302v-15h13v15zM109 302v-29h13v29zM132 302v-19h13v19zM155 302v-38h13v38zM178 302v-27h13v27zM201 302v-21h13v21zM224 302v-16h13v16zM247 302v-29h13v29zM270 302v-35h13v35zM293 302v-43h13v43zM316 302v-26h13v26zM339 302v-19h13v19zM362 302v-28h13v28zM385 302v-38h13v38zM408 302v-48h13v48zM431 302v-40h13v40zM454 302v-31h13v31zM477 302v-22h13v22zM500 302v-35h13v35zM523 302v-27h13v27zM546 302v-40h13v40zM569 302v-30h13v30zM592 302v-24h10v24z"/></g>
+<text x="38" y="322" fill="#aabcc4" font-family="Arial,sans-serif" font-size="10" letter-spacing="1">ILLUSTRATIVE VOLUME</text>
+</svg>
+END FILE
+
+========================================================================
+ADD images/woka-icon.svg
+========================================================================
+BEGIN FILE
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#8de0c8"/><text x="10" y="45" fill="#0d1b25" font-family="Arial,sans-serif" font-size="44" font-weight="700">w</text></svg>
+END FILE
